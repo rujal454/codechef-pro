@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <br>
+    <h1>LOGIN PAGE</h1>
+    <br>
+    <br>Username <input type="email" id="text1" placeholder="Enter username(email id)"style="width:300px">
+    <br>
+    <br>Password <input type="password" id="text2" placeholder="Enter password"style="width:300px">
+    <br>
+    <br>
+    <button onclick="f1()" id="bt">login</button>
+    <style>
+     body {text-align: center;}
+    </style>
+    
+</body>
+<script type="text/javascript">
+    function f1()
+
+    {
+        var str=document.getElementById("text1").value;
+        var str1=document.getElementById("text2").value;
+        var validRegex = /^([a-zA-Z0-9\._]+)@([[a-zA-Z0-9]+).([a-z]{2,20})$/;
+        
+        if(str.match(validRegex) && str1.length>=6){
+            let s=str.substring(0,str.indexOf("@"));
+            let u=s.toUpperCase();
+            document.write("SUCESSFULLY LOGGED IN ");
+            document.write("WELCOME "+" "+u);
+            console.log( "Username:"+str);
+            console.log("Password:"+str1);
+            alert("Username:"+str+"\nPassword:"+str1);
+        
+        }
+        else
+        if(str.length==0 && str1.length==0){
+            alert("Enter Username And Password");
+        }
+
+        else
+        if(str.length==0){
+            alert("Enter Username");
+        }
+        else
+        if(str1.length==0){
+            alert("Enter Password");
+        }
+        else
+        {
+            alert("INVALID");
+            document.write("INVALID");
+        }
+        
+    }
+
+</script>
+</html>
